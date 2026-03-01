@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты | BudgetFlow</title>
+    <title>FAQ | BudgetFlow</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .accordion-card .card-header {
+            cursor: pointer;
+        }
+        .accordion-card .card-header .icon {
+            transition: transform 0.3s;
+        }
+        .accordion-card.is-active .card-header .icon {
+            transform: rotate(180deg);
+        }
+        .accordion-card .card-content {
+            display: none;
+        }
+        .accordion-card.is-active .card-content {
+            display: block;
+        }
+    </style>
 </head>
 <body>
- <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="index.html">
         <strong class="is-size-4" style="color: #368075;">🌺 FlowFlow</strong>
@@ -30,11 +47,11 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item" href="#flowers">
-        Каталог
-    </a>
+   Каталог
+</a>
 
       <a class="navbar-item" href="#about">
-         О бренде
+        О бренде
       </a>
 
       <a class="navbar-item" href="contacts.html" >
@@ -42,7 +59,7 @@
       </a>
 
       <a class="navbar-item" href="#delivery">
-         Доставка и оплата
+        Доставка и оплата
       </a>
 
       <a class="navbar-item" href="faq.html">
@@ -56,85 +73,83 @@
     </div>
   </div>
 </nav>
-
     <section class="section" style="margin-top: 3rem;">
         <div class="container">
-            <h1 class="title is-1">Контакты</h1>
-            <div class="columns">
-                <div class="column is-6">
-                    <h2 class="title is-3">Напишите нам</h2>
-                    <form id="feedbackForm">
-                        <div class="field">
-                            <label class="label">Имя</label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="Ваше имя" required>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control">
-                                <input class="input" type="email" placeholder="example@email.com" required>
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Тема</label>
-                            <div class="control">
-                                <div class="select is-fullwidth">
-                                    <select required>
-                                        <option value="" disabled selected>Выберите тему</option>
-                                        <option>Предложение</option>
-                                        <option>Жалоба</option>
-                                        <option>Вопрос</option>
-                                        <option>Благодарность</option>
-                                    </select>
+            <h1 class="title is-1 has-text-centered">Часто задаваемые вопросы</h1>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="accordion">
+                        <div class="card accordion-card">
+                            <header class="card-header" onclick="toggleAccordion(this)">
+                                <p class="card-header-title">Как долго стоят ваши букеты?</p>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    При правильном уходе наши букеты радуют от 7 до 14 дней. Мы всегда вкладываем памятку по уходу.
                                 </div>
                             </div>
                         </div>
-                        <div class="field">
-                            <label class="label">Сообщение</label>
-                            <div class="control">
-                                <textarea class="textarea" placeholder="Ваше сообщение..." rows="5" required></textarea>
+                        <div class="card accordion-card">
+                            <header class="card-header" onclick="toggleAccordion(this)">
+                                <p class="card-header-title">Сколько стоит доставка?</p>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    <p>Доставка бесплатна при заказе от 3000 рублей. В остальных случаях — 300 рублей.</p>ы
+                                </div>
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="control">
-                                <label class="checkbox">
-                                    <input type="checkbox" required>
-                                    Соглашаюсь на обработку персональных данных
-                                </label>
+                        <div class="card accordion-card">
+                            <header class="card-header" onclick="toggleAccordion(this)">
+                                <p class="card-header-title">Можно ли заказать букет ночью?</p>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    Да! Мы принимаем заказы круглосуточно. Доставка работает с 8:00 до 23:00.
+                                </div>
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-primary" type="submit">Отправить отзыв</button>
+                        <div class="card accordion-card">
+                            <header class="card-header" onclick="toggleAccordion(this)">
+                                <p class="card-header-title">А если цветы не понравятся?</p>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                </div>
+                                <p>Мы гарантируем свежесть и качество. Если что-то не так — заменим букет или вернём деньги.</p>
                             </div>
                         </div>
-                    </form>
-                    <script>
-                        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-                            e.preventDefault();
-                            alert('Спасибо! Ваше сообщение отправлено (демо-режим).');
-                            this.reset();
-                        });
-                    </script>
-                </div>
-                <div class="column is-6">
-                    <div class="content">
-                        <h3 class="title is-4">Наши контакты</h3>
-                        <p><span class="icon"><i class="fas fa-map-marker-alt"></i></span> Москва, ул. Цветочная, 15</p>
-                        <p><span class="icon"><i class="fas fa-phone"></i></span> 7 (999) 123-45-67</p>
-                        <p><span class="icon"><i class="fas fa-envelope"></i></span> support@flowflow.ru</p>
-                        <hr>
-                        <h4 class="title is-5">Мы на карте</h4>
-                        <div style="background-color: #e0e0e0; height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
-                            <span class="icon is-large has-text-grey"><i class="fas fa-map fa-4x"></i></span>
-                            <p class="ml-2">Здесь будет карта</p>
+                        <div class="card accordion-card">
+                            <header class="card-header" onclick="toggleAccordion(this)">
+                                <p class="card-header-title">Как связаться с поддержкой?</p>
+                                <span class="icon">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </header>
+                            <div class="card-content">
+                                <div class="content">
+                                    Вы можете написать нам через форму на странице <a href="contacts.html">Контакты</a> или отправить email на support@flowflow.ru. Обычно отвечаем в течение часа.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <footer class="footer" id="contact">
     <div class="container">
         <div class="columns">
@@ -144,7 +159,7 @@
                 <p class="mt-4">
                     <i class="fas fa-map-marker-alt mr-2"></i> ул. Цветочная, 15<br>
                     <i class="fas fa-phone mr-2"></i> +7 (999) 123-45-67<br>
-                    <i class="fas fa-envelope mr-2"></i> hello@flowflow.ru
+                    <i class="fas fa-envelope mr-2"></i> hello@аflowflow.ru
                 </p>
             </div>
             <div class="column is-4">
@@ -169,17 +184,26 @@
         </div>
     </div>
 </footer>
-  
+
+
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const burger = document.querySelector('.navbar-burger');
             const menu = document.querySelector('#navbarMenu');
-            burger.addEventListener('click', () => {
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-            });
+            if (burger) {
+                burger.addEventListener('click', () => {
+                    burger.classList.toggle('is-active');
+                    menu.classList.toggle('is-active');
+                });
+            }
         });
+
+        function toggleAccordion(header) {
+            const card = header.closest('.accordion-card');
+            card.classList.toggle('is-active');
+        }
     </script>
 
     
